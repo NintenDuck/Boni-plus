@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/ParentLevel.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/actors/enemies/bottomDeath.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/levels/Tilemaps/tilemapLevel.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/levels/nextLevelArea.tscn" type="PackedScene" id=13]
+
+[node name="ParentLevel" type="Node2D"]
+z_index = -1
+script = ExtResource( 4 )
+
+[node name="Positions" type="Node" parent="."]
+
+[node name="NO_limit_position" type="Position2D" parent="Positions"]
+
+[node name="SE_limit_position" type="Position2D" parent="Positions"]
+position = Vector2( 128, 128 )
+
+[node name="player_init_position" type="Position2D" parent="Positions"]
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="nextLevelArea" parent="." instance=ExtResource( 13 )]
+
+[node name="tilemapLevel" parent="." instance=ExtResource( 12 )]
+tile_data = PoolIntArray( 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 786431, 0, 0, 851967, 0, 0, 917503, 0, 0, 983039, 0, 0, 1048575, 0, 0 )
+
+[node name="bottomDeath" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -24 )

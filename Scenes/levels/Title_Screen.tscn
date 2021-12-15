@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/levels/Tilemaps/tilemapLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Title_Screen.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/actors/enemies/playerDetector.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/actors/player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/UI/UI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/levels/Goal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/levels/Tilemaps/tilemapTutorial.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sprites/Tiles/Logo.png" type="Texture" id=8]
+
+[node name="Title_Screen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
+[node name="playerDetector" parent="." instance=ExtResource( 3 )]
+position = Vector2( 136, 96 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 8, 96 )
+
+[node name="Goal" parent="." instance=ExtResource( 6 )]
+position = Vector2( 112, 96 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 16, 40 )
+texture = ExtResource( 8 )
+
+[node name="tilemapLevel" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 65535, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 720895, 0, 0, 655366, 49, 0, 786431, 0, 0, 720896, 47, 0, 720898, 49, 0, 720900, 48, 0, 720902, 52, 0, 720904, 47, 0, 720906, 54, 0, 720907, 54, 0, 720910, 39, 0, 851967, 0, 0, 786432, 44, 0, 786433, 45, 0, 786434, 43, 0, 786435, 45, 0, 786436, 43, 0, 786437, 45, 0, 786438, 44, 0, 786439, 45, 0, 786440, 44, 0, 786441, 45, 0, 786442, 53, 0, 786443, 42, 0, 786444, 42, 262145, 786445, 42, 1, 786446, 42, 1, 786447, 42, 262145, 786448, 42, 2, 917503, 0, 0, 851968, 55, 0, 851969, 55, 0, 851970, 55, 0, 851971, 55, 0, 851972, 55, 0, 851973, 55, 0, 851974, 55, 0, 851975, 55, 0, 851976, 55, 0, 851977, 55, 0, 851978, 55, 0, 851979, 42, 131072, 851980, 42, 65542, 851981, 42, 65537, 851982, 42, 65537, 851983, 42, 65537, 851984, 42, 65538, 983039, 0, 0, 917504, 56, 0, 917505, 56, 0, 917506, 56, 0, 917507, 56, 0, 917508, 56, 0, 917509, 56, 0, 917510, 56, 0, 917511, 56, 0, 917512, 56, 0, 917513, 56, 0, 917514, 56, 0, 917515, 56, 0, 917516, 42, 65536, 917517, 42, 65537, 917518, 42, 65537, 917519, 42, 65537, 917520, 42, 65538, 1048575, 0, 0, 983040, 56, 0, 983041, 56, 0, 983042, 56, 0, 983043, 56, 0, 983044, 56, 0, 983045, 56, 0, 983046, 56, 0, 983047, 56, 0, 983048, 56, 0, 983049, 56, 0, 983050, 56, 0, 983051, 42, 0, 983052, 42, 131078, 983053, 42, 65537, 983054, 42, 65537, 983055, 42, 65537, 983056, 42, 65538, 1048586, 42, 0, 1048587, 42, 131078, 1048588, 42, 65537, 1048589, 42, 65537, 1048590, 42, 65537, 1048591, 42, 65537, 1048592, 42, 65538, 1114122, 42, 131072, 1114123, 42, 131073, 1114124, 42, 131073, 1114125, 42, 131073, 1114126, 42, 131073, 1114127, 42, 131073, 1114128, 42, 131074 )
+
+[node name="tilemapTutorial" parent="." instance=ExtResource( 7 )]
+tile_data = PoolIntArray( 1, 2, 0 )
+
+[connection signal="body_entered" from="playerDetector" to="." method="_on_playerDetector_body_entered"]

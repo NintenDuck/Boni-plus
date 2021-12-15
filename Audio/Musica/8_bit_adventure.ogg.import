@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/8_bit_adventure.ogg-6983c0c48bab6d00e549cd74b6ed3509.oggstr"
+
+[deps]
+
+source_file="res://Audio/Musica/8_bit_adventure.ogg"
+dest_files=[ "res://.import/8_bit_adventure.ogg-6983c0c48bab6d00e549cd74b6ed3509.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0.0

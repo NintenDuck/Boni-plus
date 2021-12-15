@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/parent_enemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/parents/Hitbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/parents/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/EnemyStats.gd" type="Script" id=4]
+
+[node name="parent_enemy" type="KinematicBody2D"]
+collision_layer = 0
+script = ExtResource( 1 )
+
+[node name="EnemyStats" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Hitbox" parent="." instance=ExtResource( 2 )]
+collision_mask = 4
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+
+[connection signal="hit" from="Hurtbox" to="." method="_on_Hurtbox_hit"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]

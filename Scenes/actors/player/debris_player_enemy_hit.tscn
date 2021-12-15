@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/parents/parent_debris_player_bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Player/bullet_debris.png" type="Texture" id=2]
+
+[node name="debris_player_enemy_hit" instance=ExtResource( 1 )]
+max_velocity = Vector2( 20, 20 )
+desacceleration = 0.02
+random_debris = true
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+hframes = 2
+
+[node name="clear_timer" parent="." index="1"]
+one_shot = false

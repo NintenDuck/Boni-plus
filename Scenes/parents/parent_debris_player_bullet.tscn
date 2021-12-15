@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/parent_debris_player_bullet.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/parents/parent_debris.tscn" type="PackedScene" id=2]
+
+[node name="parent_debris_player_bullet" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+max_trail = Vector2( 2, 2 )
